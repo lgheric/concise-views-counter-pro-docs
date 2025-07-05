@@ -1,10 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>docs.robertwp.com</title>
+    <title>Documentation Center | RobertWP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 搜索支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+    <style>
+        body {
+            padding: 2em;
+            max-width: 900px;
+            margin: auto;
+        }
+        h1 {
+            color: #42b983;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        ul {
+            line-height: 1.8em;
+        }
+        .doc-link {
+            margin-bottom: 1em;
+        }
+        .lang-label {
+            font-size: 0.9em;
+            color: #888;
+            margin-left: 0.5em;
+        }
+    </style>
+    <!-- 安全性增强 -->
+    <script>
+        // 禁止 iframe 嵌入
+        if (window.top !== window.self) {
+            window.top.location = window.self.location;
+        }
+        // 禁止右键菜单
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
 </head>
 <body>
+<div id="app">
+    <h1>📚 RobertWP Documentation Center</h1>
 
+    <input type="text" id="search-box" placeholder="搜索插件文档..." oninput="searchDocs()" style="width: 100%; padding: 0.5em; margin-bottom: 1em;">
+
+    <div id="doc-index">
+        <ul>
+            <li class="doc-link">
+                <a href="/concise-views-counter-pro">Concise Views Counter Pro</a>
+                <span class="lang-label">[English]</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function searchDocs() {
+        const input = document.getElementById("search-box").value.toLowerCase();
+        const links = document.querySelectorAll(".doc-link");
+        links.forEach(link => {
+            const text = link.textContent.toLowerCase();
+            link.style.display = text.includes(input) ? "block" : "none";
+        });
+    }
+
+    window.$docsify = {
+        loadSidebar: false,
+        loadNavbar: false,
+        search: {
+            paths: 'auto',
+            placeholder: '搜索',
+            noData: '未找到结果',
+            depth: 3
+        }
+    };
+</script>
 </body>
 </html>
