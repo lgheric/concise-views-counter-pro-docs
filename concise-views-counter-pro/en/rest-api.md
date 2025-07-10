@@ -18,7 +18,7 @@
 }
 ```
 
-## 获取浏览量 ![Pro](https://img.shields.io/badge/Pro-purple)
+## 获取浏览量 ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
 
 **GET** `/wp-json/rw-cvc/v1/views/{post_id}?days=7`
 
@@ -41,7 +41,7 @@
 
 
 
-## 增加浏览量 ![Pro](https://img.shields.io/badge/Pro-purple)
+## 增加浏览量 ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
 
 **POST** `/wp-json/rw-cvc/v1/increase/{post_id}`
 
