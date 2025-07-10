@@ -92,3 +92,22 @@ add_filter('rw_cvc_display_views_output', function($views, $post_id) {
     );
 }, 10, 2);
 ```
+
+### `rw_cvc_rest_api_response`
+
+Used to filter the REST API response data for the post views endpoint.
+
+**Parameters**  
+- `$response_data` (`array`): The data to be returned in the API response.  
+- `$post` (`WP_Post`): The post object associated with the requested post ID.
+
+**Return**  
+- `array`: The modified response data that will be returned to the REST API caller.
+
+**Usage Example**
+
+```php
+add_filter('rw_cvc_rest_api_response', function($data, $post) {
+    $data['custom_note'] = 'This is additional data added via filter.';
+    return $data;
+}, 10, 2);
