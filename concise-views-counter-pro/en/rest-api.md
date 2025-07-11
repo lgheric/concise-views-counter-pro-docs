@@ -1,15 +1,15 @@
-# REST API 使用说明
+# REST API Documentation
 
-插件提供了以下 REST API 接口，方便开发者二次集成和调用数据。
+The plugin provides the following REST API endpoints for developers to integrate and retrieve data.
 
-## 获取浏览量 ![Lite](https://img.shields.io/badge/Lite-green)
+## Get View Count ![Lite](https://img.shields.io/badge/Lite-green)
 
 **GET** `/wp-json/rw-cvc/v1/views/{post_id}`
 
-- 参数：
-  - `post_id`：文章 ID
+- Parameters：
+  - `post_id`：Post ID
 
-- 返回示例：
+- Example response：
 
 ```json
 {
@@ -18,16 +18,16 @@
 }
 ```
 
-## 获取浏览量 ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
+## Get View Count ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
 
 **GET** `/wp-json/rw-cvc/v1/views/{post_id}?days=7`
 
-- 参数：
-  - `post_id`：文章 ID
-  - `days`： 天数
+- Parameters：
+  - `post_id`：Post ID
+  - `days`： Time period in days
 
 
-- 返回示例：
+- Example response：
 ```json
 {
   "post_id": 123,
@@ -41,14 +41,14 @@
 
 
 
-## 增加浏览量 ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
+## Increase View Count ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
 
 **POST** `/wp-json/rw-cvc/v1/increase/{post_id}`
 
-- 参数：
-  - `post_id`：文章 ID
+- Parameters：
+  - `post_id`：Post ID
 
-- 返回示例：
+- Example response：
 
 ```json
 {
@@ -57,4 +57,4 @@
 }
 ```
 
-确保已启用 REST API 模块。
+Ensure the REST API feature is enabled.

@@ -1,22 +1,22 @@
-# 可用钩子（Hooks）
+# Available Hooks
 
-为了方便开发者扩展插件功能，插件提供了一些动作（actions）与过滤器（filters）。
+To allow developers to extend plugin functionality, the plugin provides various actions and filters.
 
-## 动作钩子（Actions）
+## Action Hooks
 ### `rw_cvc_post_view_count_updated`
-当文章的浏览量被更新后触发。
+Triggered after a post's view count is updated.
 
-**参数**
-- `$post_id` (int): 文章 ID
-- `$new_view_count` (int): 更新后的浏览量
-- `$old_view_count` (int): 更新前的浏览量
+**Parameters**
+- `$post_id` (int): Post ID
+- `$new_view_count` (int): Updated view count
+- `$old_view_count` (int): Previous view count
 
 ---
 
 ### `rw_cvc_settings_saved`
-当插件设置保存后触发。
+Triggered after plugin settings are saved.
 
-**参数**
+**Parameters**
 - `$new_settings` (array)
 - `$old_settings` (array)
 
@@ -24,30 +24,30 @@
 
 ### `concise_post_views_counted`
 
-在成功记录浏览量后触发。
+Triggered after a view is successfully recorded.
 
 ```php
 do_action('concise_post_views_counted', $post_id);
 ```
 
-## 过滤器钩子（Filters）
+## Filter Hooks
 ### `rw_cvc_should_count_view`
-用于判断是否统计当前请求的浏览量。
+Determines whether to count the current request as a view.
 
-**参数**
-- `$should_count` (bool): 默认 `true`
+**Parameters**
+- `$should_count` (bool): Default  `true`
 - `$post_id` (int)
 
-**返回**
-- `bool`: 返回 `false` 跳过统计
+**Return**
+- `bool`: Return `false`  to skip counting
 
 ---
 
 ### `rw_cvc_display_views_output`
-允许自定义前台显示的浏览量格式。
+Allows customization of the view count display format on the front end.
 Filter the output of the [concise_post_views] shortcode for total views.
 
-**参数**
+**Parameters**
 - `$output` (string|int): The current views value (e.g. '123').
 - `$post_id` (int) The current post ID.
 - `$atts` (array)  The original shortcode attributes.
@@ -55,15 +55,15 @@ Filter the output of the [concise_post_views] shortcode for total views.
 ---
 
 ### `rw_cvc_rest_api_response`
-用于修改 REST API 返回的数据。
+Modifies the data returned by the REST API.
 
-**参数**
-- `$response_data` (array): 当前响应数据
-- `$post` (WP_Post): 当前文章对象
+**Parameters**
+- `$response_data` (array): Current response data
+- `$post` (WP_Post):  Current post object
 
 ### `concise_post_views_format`
 
-自定义浏览量格式输出。
+Customizes the view count output format.
 
 ```php
 add_filter('concise_post_views_format', function($output, $count) {
@@ -71,16 +71,16 @@ add_filter('concise_post_views_format', function($output, $count) {
 }, 10, 2);
 ```
 
-- `$output`：默认的输出 HTML
-- `$count`：浏览次数
+- `$output`：Default HTML output
+- `$count`：View count
 
 ### `rw_cvc_display_views_output`  
-  修改浏览量输出格式  
-  **参数**：  
-  `$views` (string) - 原始浏览量  
-  `$post_id` (int) - 文章ID  
-  `$atts` (array) - 短码属性  
-  **返回**：格式化后的字符串
+  Modifies the view count output format.
+  **Parameters**：  
+  `$views` (string) - Original view count  
+  `$post_id` (int) - Post ID  
+  `$atts` (array) - Shortcode attributes  
+  **Return**：Formatted string
   
 ```php
 // 在主题的functions.php中添加：

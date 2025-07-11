@@ -1,8 +1,8 @@
 ## Frequently Asked Questions
 
-**如何重置浏览量？**
+**How to reset the view count?**
 
-进入设置界面，点击“重置浏览量”按钮。
+Go to the settings page and click the "Reset View Count" button.
 
 **Can this plugin track views of custom post types?**
 Yes. By default, it tracks the **'post'**and **'page'**types. You can add support for any custom post type using a filter hook in your theme or another plugin:
