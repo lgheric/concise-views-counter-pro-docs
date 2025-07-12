@@ -82,5 +82,5 @@ To unlock custom post type export and additional advanced features, consider upg
 
 If you need assistance or run into issues, feel free to reach out:
 
-- Plugin Page: [https://wordpress.org/plugins/concise-views-counter-pro](https://wordpress.org/plugins/concise-views-counter-pro)
+- Plugin Page: [https://wordpress.org/plugins/rw-postviewstats-pro](https://wordpress.org/plugins/rw-postviewstats-pro)
 - Email: `support@example.com`

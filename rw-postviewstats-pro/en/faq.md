@@ -22,5 +22,5 @@ Yes! Pro version supports CSV exports by post/date range.
 Some data such as IP address and admin email may be transmitted over HTTPS for license validation, but we do not store this data in identifiable form. All sensitive information is hashed or anonymized before storage.
 
 **How to add translations?**
-Copy `/languages/concise-views-counter-pro.pot` and submit your `.po` file.
+Copy `/languages/rw-postviewstats-pro.pot` and submit your `.po` file.
 
